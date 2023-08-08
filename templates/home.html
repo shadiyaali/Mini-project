@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">hello</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+
+
+            {% if user.is_authenticated %}
+             
+                
+             
+             <a class="nav=item nav-link" href="#"><strong>welcome{{user.first_name}} </strong></a>
+            {% else %}
+
+            {% endif %}
+            {% if user.is_authenticated %}
+
+            <a class="nav-link" href="/accounts/logout">logout </a> 
+            {%  else %}
+          
+              <a class="nav-link" href="/accounts/login">login </a> 
+              <a class="nav-link" href="admin/admin_log">admin</a>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/accounts/register">register</a>
+            </li>
+             
+             
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+</body>
+</html>
+<br><br><br><br>
+            <div class="container">
+
+              {%if user.is_authenticated %}
+
+                  <div class="row">
+
+                    <div class="card" style="width: 18rem;">
+                      <img class="card-img-top" src="https://cdn.londonandpartners.com/-/media/images/london/visit/campaigns/international-recovery-campaign/lets-do-london-related-international-640.jpeg?mw=640&hash=477E6FF9F31F292EE017E5BA63027C7054EB39A0" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">London</h5>
+                        <p class="card-text">London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times. At its centre stand the imposing Houses of Parliament, the iconic ‘Big Ben’ clock tower and Westminster Abbey, site of British monarch coronations. Across the Thames River, the London Eye observation wheel provides panoramic views of the South Bank cultural complex, and the entire city</p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                      </div>
+                    </div>
+
+
+                    <div class="card" style="width: 18rem;">
+                      <img class="card-img-top" src="https://lp-cms-production.imgix.net/features/2017/09/dubai-marina-skyline-2c8f1708f2a1.jpg?auto=format&q=40&ar=16%3A9&fit=crop&w=1946" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">Dubai</h5>
+                        <p class="card-text">Dubai is a city and emirate in the United Arab Emirates known for luxury shopping, ultramodern architecture and a lively nightlife scene. Burj Khalifa, an 830m-tall tower, dominates the skyscraper-filled skyline. At its foot lies Dubai Fountain, with jets and lights choreographed to music. On artificial islands just offshore is Atlantis, The Palm, a resort with water and marine-animal parks.</p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                      </div>
+                    </div>
+
+
+                    <div class="card" style="width: 18rem;">
+                      <img class="card-img-top" src="https://www.fodors.com/wp-content/uploads/2018/10/HERO_UltimateParis_Heroshutterstock_112137761.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">Paris</h5>
+                        <p class="card-text">Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy and culture. Its 19th-century cityscape is crisscrossed by wide boulevards and the River Seine. Beyond such landmarks as the Eiffel Tower and the 12th-century, Gothic Notre-Dame cathedral, the city is known for its cafe culture and designer boutiques along the Rue du Faubourg Saint-Honoré.</p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                      </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpZMSwmaxXL2kzXwjG1qM4LB4wags0aqnACJWvKtOS8Ip40oI0eutnxTn55psVDu27gXs&usqp=CAU" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">India</h5>
+                        <p class="card-text">India, officially the Republic of India  is a country in South Asia. It is the seventh-largest country by area, the second-most populous country, and the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest, and the Bay of Bengal on the southeast, it shares land borders with Pakistan to the west;[f] China, Nepal, and Bhutan to the north; and Bangladesh and Myanmar to the east. In the Indian Ocean, India is in the vicinity of Sri Lanka and the Maldives; its Andaman and Nicobar Islands share a maritime border with Thailand, Myanmar, and Indonesia. The nation's capital city is New Delhi.</p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                      </div>
+                    </div>
+
+                  </div>
+              {%else%}
+              <h1 class="text-center">Want To See More Contents ?<br></h1>
+              <p  style="padding-left: 500px;">Please Login/Register To See More Contents</p>
+              {%endif%}
+
+            </div>
+
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknC vxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+      
+
+
+ 
